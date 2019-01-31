@@ -1,5 +1,6 @@
 import urllib.request
 
+from google_images_download import google_images_download
 
 
 for i in range(1,9):
@@ -19,3 +20,11 @@ for i in range(100,516):
         urllib.request.urlretrieve(url, filename)
     except:
         urllib.error.HTTPError
+
+response_1 = google_images_download.googleimagesdownload()
+
+arguments = {"keywords": "dog","limit":500,"print_urls":True, "chromedriver" : "C:\\Users\\jguzm\\chromedriver\\chromedriver.exe"}
+
+paths = response_1.download(arguments)
+
+print(paths)
